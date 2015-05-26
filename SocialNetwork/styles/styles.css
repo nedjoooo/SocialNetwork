@@ -4,24 +4,29 @@ header {
 
 #wrapper {
     margin: 0 auto;
-    width: 700px;
+    width: 350px;
 }
 
 #loginDiv, #registerDiv {
     display: inline-block;
-    width: 300px;
+    width: 320px;
     height: 500px;
     border: 1px solid black;
-    padding: 10px;
+    padding: 20px 10px;
     vertical-align: bottom;
     text-align: center;
+    margin: 0 auto;
+}
+
+#registerDiv input {
+    width: 180px;
 }
 
 #loginDiv input {
     margin: 0 auto;
 }
 
-label {
+#loginDiv label {
     display: block;
     margin: 5px auto;
     padding: 5px;
@@ -29,10 +34,68 @@ label {
 }
 
 #registerDiv label, #registerDiv input {
-    width: 120px;
+    width: 142px;
     display: inline-block;
 }
 
 .loginButton {
-    margin-top: 10px;
+    margin-top: 30px;
+}
+
+.homeParagraph {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px 5px 20px 5px;
+}
+
+.homeDiv {
+    width: 350px;
+    border: 1px solid black;
+}
+
+.button, .button:focus {
+    color: white;
+    font-weight: bold;
+    background: blue;
+    border: 1px solid darkblue;
+    text-decoration: none;
+    padding: 5px 20px;
+    display: inline-block;
+    margin: 5px 10px 0px 10px;
+    outline: none;
+    width: 150px;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.button:hover {
+    background: steelblue;
+    border: 1px solid darkblue;
+    text-decoration: none;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
+    cursor: pointer;
+}
+
+.buttonsBox {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.registerField {
+    display: inline-block;
+}
+
+.inputRegisterField {
+    margin-bottom: 20px;
+}
+
+.inputRegisterField label {
+    text-align: left;
+}
+
+.registerLocation {
+    margin-top: 20px;
+    font-size: 1.5em;
 }
