@@ -17,6 +17,10 @@ header {
     text-align: center;
 }
 
+#loginDiv input {
+    margin: 0 auto;
+}
+
 label {
     display: block;
     margin: 5px auto;
@@ -24,6 +28,11 @@ label {
     font-size: 20px;
 }
 
-#registerDiv input {
+#registerDiv label, #registerDiv input {
     width: 120px;
+    display: inline-block;
+}
+
+.loginButton {
+    margin-top: 10px;
 }

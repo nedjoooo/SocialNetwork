@@ -1,10 +1,16 @@
-var app = angular.module('socialNetworkApp', ['ngRoute', 'ngResource', 'LocalStorageModule']);
+'use strict';
 
-app.constant('baseServiceUrl', 'http://softuni-social-network.azurewebsites.net/api/');
+var app = angular.module('socialNetworkApp', ['ngRoute', 'ngResource', 'ui.bootstrap.pagination']);
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(function ($routeProvider) {
+
     $routeProvider.when('/', {
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
     });
-}]);
+
+    $routeProvider.otherwise(
+        { redirectTo: '/' }
+    );
+
+});
