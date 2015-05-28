@@ -1,18 +1,55 @@
 <header id="user-header">
-    <div ng-include="'templates/users/header.html'"></div>
+    <div id="userHeaderDiv" ng-include="'templates/users/header.html'"></div>
 </header>
 <div id="edit-profile">
     <div>
-        <h1>Edit Profile</h1>
+        <h1 class="userFieldHeader">Edit Profile</h1>
     </div>
     <div id="profile-container">
-        <div id="image-profile-container">
-            <label for="image">Image:</label>
-            <input type="file" id="image"
-                   onchange="angular.element(this).scope().fileSelected(this)" />
-            <div class="image-box">
-                <p>Image Preview</p>
+        <form class="form-horizontal">
+            <div id="image-profile-container">
+                <div class="image-box"></div>
+                <div>
+                    <p>Allowed format: .jpg</p>
+                    <p>Limit: 128kb</p>
+                </div>
+                <input type="file" onchange="angular.element(this).scope().fileSelected(this)" />
             </div>
-        </div>
+            <div id="profile-data-container">
+                <div class="inputRegisterField">
+                    <label for="inputRegisterUsername">Username</label>
+                    <div class="registerField">
+                        <input type="text" class="form-control" id="inputRegisterUsername" placeholder="Username" ng-model="userData.username" required>
+                    </div>
+                </div>
+                <div class="inputRegisterField">
+                    <label for="inputRegisterEmail">Email</label>
+                    <div class="registerField">
+                        <input type="email" class="form-control" id="inputRegisterEmail" placeholder="Email" ng-model="userData.email" required>
+                    </div>
+                </div>
+                <div class="inputRadio">
+                    <span id="inputRegisterGender">Gender</span>
+                    <div class="radioRegisterField">
+                        <input type="radio" name="gender" value="1" ng-model="userData.gender"> Male
+                        <input type="radio" name="gender" value="2" ng-model="userData.gender"> Female
+                        <input type="radio" name="gender" value="0" ng-model="userData.gender"> Other
+                    </div>
+                </div>
+                <div class="coverImageArea">
+                    <div id="coverImageTitleArea">
+                        <div class="coverImageLimitTitle">
+                            <p>Limit: 1024kb</p>
+                        </div>
+                        <input type="file"
+                               onchange="angular.element(this).scope().coverFileSelected(this)" />
+                    </div>
+                    <div class="image-profile-box"></div>
+                </div>
+            </div>
+            <div class="editProfileButton">
+                <button type="submit" class="btn btn-primary" ng-click="updateProfile(userData)">Save Changes</button>
+            </div>
+        </form>
     </div>
 </div>

@@ -39,12 +39,23 @@ app.factory('authService', function($http, baseServiceUrl) {
             }
         },
 
-        getUserProfile: function(success, error) {
+        getUserPreviewData: function(success, error) {
             var username = angular.fromJson(sessionStorage['currentUser']).userName;
             var headers = this.getAuthHeaders();
             var request = {
                 method: 'GET',
                 url: baseServiceUrl + 'users/' + username + '/preview',
+                headers: headers
+            };
+            $http(request).success(success).error(error);
+        },
+
+        getUserFullData: function(success, error) {
+            var username = angular.fromJson(sessionStorage['currentUser']).userName;
+            var headers = this.getAuthHeaders();
+            var request = {
+                method: 'GET',
+                url: baseServiceUrl + 'users/' + username,
                 headers: headers
             };
             $http(request).success(success).error(error);
@@ -57,6 +68,16 @@ app.factory('authService', function($http, baseServiceUrl) {
                 headers.Authorization = 'Bearer ' + currentUser.access_token;
             }
             return headers;
-        }
+        },
+
+        editUser: function(userData, success, error) {
+            var request = {
+                method: 'PUT',
+                url: baseServiceUrl + 'me',
+                data: userData,
+                headers: this.getAuthHeaders()
+            };
+            $http(request).success(success).error(error);
+        },
     }
 });

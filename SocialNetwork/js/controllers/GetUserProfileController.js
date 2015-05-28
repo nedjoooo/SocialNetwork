@@ -1,7 +1,7 @@
 app.controller('GetUserProfileController',
     function($scope, authService, notifyService) {
-        $scope.getUserProfile = function() {
-            authService.getUserProfile(
+        $scope.getUserPreviewData = function() {
+            authService.getUserPreviewData(
                 function success(data) {
                     $scope.userData = data;
                 },
@@ -11,6 +11,6 @@ app.controller('GetUserProfileController',
             );
         };
 
-    $scope.getUserProfile();
+    $scope.getUserPreviewData();
     }
 );

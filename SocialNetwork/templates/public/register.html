@@ -34,6 +34,14 @@
                     <input type="email" class="form-control" id="inputRegisterEmail" placeholder="Email" ng-model="userData.email" required>
                 </div>
             </div>
+            <div class="inputRadio">
+                <span id="inputRegisterGender">Gender</span>
+                <div class="radioRegisterField">
+                    <input type="radio" name="gender" value="1" ng-model="userData.gender"> Male
+                    <input type="radio" name="gender" value="2" ng-model="userData.gender"> Female
+                    <input type="radio" name="gender" value="0" ng-model="userData.gender"> Other
+                </div>
+            </div>
             <div class="loginButton">
                 <button type="submit" class="btn btn-primary" ng-click="register(userData)">Register</button>
             </div>

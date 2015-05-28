@@ -38,6 +38,10 @@ header {
     display: inline-block;
 }
 
+#registerDiv input[type='radio'] {
+    width: 20px;
+}
+
 .loginButton {
     margin-top: 30px;
 }
@@ -93,6 +97,7 @@ header {
 
 .inputRegisterField label {
     text-align: left;
+    width: 160px;
 }
 
 .registerLocation {
@@ -125,6 +130,7 @@ header {
 #userFieldHeader {
     width: 850px;
     margin: 30px auto;
+    clear: both;
 }
 
 .headerLink {
@@ -135,8 +141,109 @@ header {
 #user-header {
     margin-left: 40px;
     display: block;
+    clear: both;
+}
+
+#userHeaderDiv {
+    clear: both;
 }
 
 #search-button, #search {
     display: inline-block;
+}
+
+#edit-profile {
+    width: 800px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.userFieldHeader {
+    text-align: center;
+}
+
+#image-profile-container, #profile-data-container {
+    border: 1px solid black;
+    width: 380px;
+    display: inline-block;
+    padding: 10px;
+    height: 300px;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.inputRadio {
+    text-align: left;
+    padding-left: 5px;
+}
+
+#inputRegisterGender {
+    display: inline-block;
+    width: 80px;
+    font-weight: bold;
+}
+
+.radioRegisterField {
+    width: 200px;
+    display: inline-block;
+}
+
+#profile-container {
+    border: 1px solid black;
+    padding: 10px;
+    height: 380px;
+}
+
+.editProfileButton {
+    float: right;
+    padding: 10px 20px 0 0;
+}
+
+.image-box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.image-profile-box {
+    width: 210px;
+    height: 88px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.coverImageLimitTitle {
+    width: 100px;
+    display: inline-block;
+}
+
+input[type="file"] {
+    display: block;
+    width: 95px;
+}
+
+#coverImageTitleArea {
+    width: 120px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.coverImageArea {
+    padding: 10px;
+    height: 100px;
+}
+
+.userImagePreviewTitle {
+    width: 25px;
+    height: 30px;
+    display: inline-block;
+}
+
+#userPreview {
+    display: inline-block;
+}
+
+.userNameTitle {
+    text-decoration: underline;
 }

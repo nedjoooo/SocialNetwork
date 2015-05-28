@@ -28,7 +28,7 @@ app.config(function ($routeProvider) {
 
     $routeProvider.when('/edit-profile', {
         templateUrl: 'templates/users/edit-profile.html',
-        controller: 'EditUserProfileContainer'
+        controller: 'EditUserProfileController'
     });
 
     $routeProvider.otherwise(

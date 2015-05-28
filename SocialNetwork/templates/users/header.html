@@ -1,7 +1,12 @@
 <div id="userFieldHeader">
-    <div id="userPreview">
-        <span>{{userData.profileImageData}}</span>
-        <span>{{userData.name}}</span>
+    <span id="userPreview">
+        <span class="userImagePreview">
+            <img class="userImagePreviewTitle" ng-src="{{userData.profileImageData}}">
+        </span>
+        <span class="userNameTitle">{{userData.name}}</span>
+    </span>
+    <div ng-if='ad.imageDataUrl'>
+        <strong>Image:</strong><img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
     </div>
     <div id="userMenu">
         <span class="headerLink"><a href="#/news"><img src="images/news.bmp"/></a></span>
