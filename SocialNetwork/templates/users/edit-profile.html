@@ -1,0 +1,18 @@
+<header id="user-header">
+    <div ng-include="'templates/users/header.html'"></div>
+</header>
+<div id="edit-profile">
+    <div>
+        <h1>Edit Profile</h1>
+    </div>
+    <div id="profile-container">
+        <div id="image-profile-container">
+            <label for="image">Image:</label>
+            <input type="file" id="image"
+                   onchange="angular.element(this).scope().fileSelected(this)" />
+            <div class="image-box">
+                <p>Image Preview</p>
+            </div>
+        </div>
+    </div>
+</div>

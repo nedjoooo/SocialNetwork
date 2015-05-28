@@ -1,0 +1,27 @@
+<header id="app-header">
+    <div ng-include="'templates/public/header.html'"></div>
+</header>
+<div id="wrapper">
+    <div id="loginDiv">
+        <form class="form-horizontal">
+            <div class="inputLoginField">
+                <label for="inputLoginUsername">Username</label>
+                <div>
+                    <input type="text" class="form-control" id="inputLoginUsername" placeholder="Username" ng-model="userData.username" required>
+                </div>
+            </div>
+            <div class="inputLoginField">
+                <label for="inputLoginPassword">Password</label>
+                <div>
+                    <input type="password" class="form-control" id="inputLoginPassword" placeholder="Password" ng-model="userData.password" required>
+                </div>
+            </div>
+            <div class="loginButton">
+                <button type="submit" class="btn btn-primary" ng-click="login(userData)">Login</button>
+            </div>
+        </form>
+        <div class="registerLocation">
+            <p>Or <a href="#/register">Register</a> </p>
+        </div>
+    </div>
+</div>

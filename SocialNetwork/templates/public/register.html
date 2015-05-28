@@ -1,0 +1,45 @@
+<header id="app-header">
+    <div ng-include="'templates/public/header.html'"></div>
+</header>
+<div id="wrapper">
+    <div id="registerDiv">
+        <form class="form-horizontal">
+            <div class="inputRegisterField">
+                <label for="inputRegisterUsername">Username</label>
+                <div class="registerField">
+                    <input type="text" class="form-control" id="inputRegisterUsername" placeholder="Username" ng-model="userData.username" required>
+                </div>
+            </div>
+            <div class="inputRegisterField">
+                <label for="inputRegisterPassword">Password</label>
+                <div class="registerField">
+                    <input type="password" class="form-control" id="inputRegisterPassword" placeholder="Password" ng-model="userData.password" required>
+                </div>
+            </div>
+            <div class="inputRegisterField">
+                <label for="inputRegisterConfirmPassword">Confirm Password</label>
+                <div class="registerField">
+                    <input type="password" class="form-control" id="inputRegisterConfirmPassword" placeholder="Confirm Password" ng-model="userData.confirmPassword" required>
+                </div>
+            </div>
+            <div class="inputRegisterField">
+                <label for="inputRegisterName">Name</label>
+                <div class="registerField">
+                    <input type="text" class="form-control" id="inputRegisterName" placeholder="Name", ng-model="userData.name" required>
+                </div>
+            </div>
+            <div class="inputRegisterField">
+                <label for="inputRegisterEmail">Email</label>
+                <div class="registerField">
+                    <input type="email" class="form-control" id="inputRegisterEmail" placeholder="Email" ng-model="userData.email" required>
+                </div>
+            </div>
+            <div class="loginButton">
+                <button type="submit" class="btn btn-primary" ng-click="register(userData)">Register</button>
+            </div>
+        </form>
+        <div class="registerLocation">
+            <p>Or <a href="#/login">Login</a> </p>
+        </div>
+    </div>
+</div>
