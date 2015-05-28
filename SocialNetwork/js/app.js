@@ -21,6 +21,16 @@ app.config(function ($routeProvider) {
         controller: 'RegisterController'
     });
 
+    $routeProvider.when('/user-home', {
+        templateUrl: 'templates/users/user-home.html',
+        controller: 'GetUserProfileController'
+    });
+
+    $routeProvider.when('/edit-profile', {
+        templateUrl: 'templates/users/edit-profile.html',
+        controller: 'EditUserProfileContainer'
+    });
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );

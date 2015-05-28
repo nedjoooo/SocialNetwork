@@ -99,3 +99,44 @@ header {
     margin-top: 20px;
     font-size: 1.5em;
 }
+
+#userPreview, #userMenu {
+    display: inline-block;
+    float: left;
+}
+
+#userPreview {
+    margin: 10px 10px;
+}
+
+#search-bar {
+    width: 230px;
+    float: right;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#search-bar input {
+    border: 1px solid gray;
+    border-radius: 8px;
+    height: 40px;
+}
+
+#userFieldHeader {
+    width: 850px;
+    margin: 30px auto;
+}
+
+.headerLink {
+    margin-right: 10px;
+    border: 1px solid gray;
+}
+
+#user-header {
+    margin-left: 40px;
+    display: block;
+}
+
+#search-button, #search {
+    display: inline-block;
+}
