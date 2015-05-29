@@ -5,14 +5,11 @@
         </span>
         <span class="userNameTitle">{{userData.name}}</span>
     </span>
-    <div ng-if='ad.imageDataUrl'>
-        <strong>Image:</strong><img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
-    </div>
     <div id="userMenu">
-        <span class="headerLink"><a href="#/news"><img src="images/news.bmp"/></a></span>
-        <span class="headerLink"><a href="#/like_friend"><img src="images/friends.bmp"></a></span>
+        <span class="headerLink"><a href="#/user-home"><img src="images/news.bmp"/></a></span>
+        <span class="headerLink"><a href="#/friend-request"><img src="images/friends.bmp"></a></span>
         <span class="headerLink"><a href="#/edit-profile"><img src="images/settings.bmp"></a></span>
-        <span class="headerLink"><a href="#/changePassword"><img src="images/change_password.bmp"></a></span>
+        <span class="headerLink"><a href="#/change-password"><img src="images/change_password.bmp"></a></span>
         <span class="headerLink"><a href="#/" ng-click="logout()"><img src="images/logout.bmp"></a></span>
     </div>
     <div id="search-bar">

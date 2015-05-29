@@ -1,4 +1,6 @@
-app.controller('GetUserProfileController',
+'use strict';
+
+app.controller('UserHomeController',
     function($scope, authService, notifyService) {
         $scope.getUserPreviewData = function() {
             authService.getUserPreviewData(
@@ -12,5 +14,4 @@ app.controller('GetUserProfileController',
         };
 
         $scope.getUserPreviewData();
-    }
-);
+})

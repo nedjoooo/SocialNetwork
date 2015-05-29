@@ -1,10 +1,13 @@
 app.controller('EditUserProfileController', function($scope, authService, notifyService) {
     $scope.userData = {};
+    $scope.name = '';
 
     function getCurrentUser() {
-        authService.getUserFullData(
+        authService.getMyData(
             function success(data) {
                 $scope.userData = data;
+                $scope.name = $scope.userData.name;
+                $scope.coverImage = "<img class='coverArea' ng-src='{{userData.coverImageData}}'>";
             },
             function error(err) {
                 notifyService.showError("Cannot load user ad", err);
@@ -14,12 +17,7 @@ app.controller('EditUserProfileController', function($scope, authService, notify
 
     getCurrentUser();
 
-    $scope.deleteImage = function() {
-        $scope.userData.profileImageData = null;
-    };
-
     $scope.fileSelected = function(fileInputField) {
-        $scope.deleteImage();
         var file = fileInputField.files[0];
         if (file.type.match(/image\/.*/)) {
             var reader = new FileReader();
@@ -34,7 +32,6 @@ app.controller('EditUserProfileController', function($scope, authService, notify
     };
 
     $scope.coverFileSelected = function(fileInputField) {
-        $scope.deleteImage();
         var file = fileInputField.files[0];
         if (file.type.match(/image\/.*/)) {
             var reader = new FileReader();
@@ -49,6 +46,7 @@ app.controller('EditUserProfileController', function($scope, authService, notify
     };
 
     $scope.updateProfile = function(userData) {
+        userData.name = $scope.name;
         authService.editUser(userData,
             function success() {
                 notifyService.showInfo("User edited successfully");

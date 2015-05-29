@@ -1,14 +1,16 @@
 <header id="user-header">
     <div id="userHeaderDiv" ng-include="'templates/users/header.html'"></div>
 </header>
-<div id="edit-profile">
+<div id="edit-profile" back-img="{{coverImage}}">
     <div>
         <h1 class="userFieldHeader">Edit Profile</h1>
     </div>
     <div id="profile-container">
         <form class="form-horizontal">
             <div id="image-profile-container">
-                <div class="image-box"></div>
+                <div class="image-box">
+                    <img class="image-box" ng-src="{{userData.profileImageData}}">
+                </div>
                 <div>
                     <p>Allowed format: .jpg</p>
                     <p>Limit: 128kb</p>
@@ -19,13 +21,13 @@
                 <div class="inputRegisterField">
                     <label for="inputRegisterUsername">Username</label>
                     <div class="registerField">
-                        <input type="text" class="form-control" id="inputRegisterUsername" placeholder="Username" ng-model="userData.username" required>
+                        <input type="text" class="form-control" id="inputRegisterUsername" ng-model="name" required>
                     </div>
                 </div>
                 <div class="inputRegisterField">
                     <label for="inputRegisterEmail">Email</label>
                     <div class="registerField">
-                        <input type="email" class="form-control" id="inputRegisterEmail" placeholder="Email" ng-model="userData.email" required>
+                        <input type="email" class="form-control" id="inputRegisterEmail" ng-model="userData.email" required>
                     </div>
                 </div>
                 <div class="inputRadio">
@@ -44,7 +46,9 @@
                         <input type="file"
                                onchange="angular.element(this).scope().coverFileSelected(this)" />
                     </div>
-                    <div class="image-profile-box"></div>
+                    <div class="image-profile-box">
+                        <img class="image-profile-box" ng-src="{{userData.coverImageData}}">
+                    </div>
                 </div>
             </div>
             <div class="editProfileButton">

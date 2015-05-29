@@ -152,14 +152,21 @@ header {
     display: inline-block;
 }
 
-#edit-profile {
-    width: 800px;
+#edit-profile, #changePassword {
     margin: 0 auto;
     clear: both;
 }
 
+#edit-profile {
+    width: 800px;
+}
+
+#changePassword {
+    width: 500px;
+}
+
 .userFieldHeader {
-    text-align: center;
+    text-align: left;
 }
 
 #image-profile-container, #profile-data-container {
@@ -246,4 +253,19 @@ input[type="file"] {
 
 .userNameTitle {
     text-decoration: underline;
+}
+
+.saveChangePasswordButton {
+    text-align: right;
+    margin: 0 88px 10px 0;
+}
+
+#change-password-container {
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.changePassword {
+    margin: 10px auto;
+    width: 400px;
 }

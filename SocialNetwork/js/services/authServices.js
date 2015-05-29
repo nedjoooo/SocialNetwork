@@ -61,6 +61,16 @@ app.factory('authService', function($http, baseServiceUrl) {
             $http(request).success(success).error(error);
         },
 
+        getMyData: function(success, error) {
+            var headers = this.getAuthHeaders();
+            var request = {
+                method: 'GET',
+                url: baseServiceUrl + 'me',
+                headers: headers
+            };
+            $http(request).success(success).error(error);
+        },
+
         getAuthHeaders : function() {
             var headers = {};
             var currentUser = this.getCurrentUser();
@@ -79,5 +89,15 @@ app.factory('authService', function($http, baseServiceUrl) {
             };
             $http(request).success(success).error(error);
         },
+
+        changePass: function(passData, success, error) {
+            var request = {
+                method: 'PUT',
+                url: baseServiceUrl + 'me/changepassword',
+                data: passData,
+                headers: this.getAuthHeaders()
+            };
+            $http(request).success(success).error(error);
+        }
     }
 });
