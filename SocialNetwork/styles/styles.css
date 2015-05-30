@@ -152,7 +152,7 @@ header {
     display: inline-block;
 }
 
-#edit-profile, #changePassword {
+#edit-profile, #changePassword, #container {
     margin: 0 auto;
     clear: both;
 }
@@ -268,4 +268,8 @@ input[type="file"] {
 .changePassword {
     margin: 10px auto;
     width: 400px;
+}
+
+#container {
+    width: 600px;
 }

@@ -1,7 +1,8 @@
 'use strict';
 
 app.controller('UserHomeController',
-    function($scope, authService, notifyService) {
+    function($scope, authService, postService, notifyService) {
+        $scope.posts = {};
         $scope.getUserPreviewData = function() {
             authService.getUserPreviewData(
                 function success(data) {
@@ -14,4 +15,17 @@ app.controller('UserHomeController',
         };
 
         $scope.getUserPreviewData();
-})
+
+        $scope.getFriendPosts = function() {
+            postService.getNewsFeeds(
+                function success(data) {
+                    $scope.posts = data;
+                },
+                function(err) {
+                    console.log(err);
+                }
+            )
+        }
+
+        $scope.getFriendPosts();
+});
