@@ -4,6 +4,7 @@ app.controller('LoginController',
         authService.login(userData,
             function success() {
                 notifyService.showInfo("Login successful");
+                window.location.reload();
                 $location.path("/user-home");
             },
             function error(err) {

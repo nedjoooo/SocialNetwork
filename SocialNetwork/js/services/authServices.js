@@ -98,6 +98,17 @@ app.factory('authService', function($http, baseServiceUrl) {
                 headers: this.getAuthHeaders()
             };
             $http(request).success(success).error(error);
+        },
+
+        getMyFriends: function(success, error) {
+            var username = angular.fromJson(sessionStorage['currentUser']).userName;
+            var headers = this.getAuthHeaders();
+            var request = {
+                method: 'GET',
+                url: baseServiceUrl + 'me/friends',
+                headers: headers
+            };
+            $http(request).success(success).error(error);
         }
     }
 });

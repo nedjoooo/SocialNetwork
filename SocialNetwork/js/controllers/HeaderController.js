@@ -1,10 +1,10 @@
-app.controller('HeaderController', function($scope, authService) {
+app.controller('HeaderController', function($scope, authService, notifyService) {
     $scope.authService = authService;
 
     $scope.userData = {};
 
     function getCurrentUser() {
-        if(authService.isLoggedIn) {
+        if(authService.isLoggedIn()) {
             authService.getMyData(
                 function success(data) {
                     $scope.userData = data;

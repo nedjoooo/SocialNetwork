@@ -6,6 +6,7 @@ app.controller('RegisterController',
             authService.register(userData,
                 function(success) {
                     notifyService.showInfo("User registered successfully");
+                    window.location.reload();
                     $location.path("/user-home");
                 },
                 function error(err) {
@@ -13,4 +14,5 @@ app.controller('RegisterController',
                 }
             )
         }
-    })
+    }
+);

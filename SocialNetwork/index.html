@@ -12,7 +12,15 @@
 <header id="app-header" ng-controller="HeaderController">
     <div ng-include="'templates/public/header.html'"></div>
 </header>
-<div ng-view>
+<div id="social-network-content">
+
+    <div ng-view>
+    </div>
+
+    <div id="friends-sidebar" ng-controller="FriendsSideBarController">
+        <div ng-include="'templates/users/friends-sidebar.html'"></div>
+    </div>
+
 </div>
 
 <!-- Load app libraries -->
@@ -33,6 +41,7 @@
 
 <script src="js/controllers/AppController.js"></script>
 <script src="js/controllers/HeaderController.js"></script>
+<script src="js/controllers/FriendsSideBarController.js"></script>
 <script src="js/controllers/HomeController.js"></script>
 <script src="js/controllers/LoginController.js"></script>
 <script src="js/controllers/RegisterController.js"></script>
