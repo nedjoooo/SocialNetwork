@@ -4,13 +4,45 @@
         <h3>{{userData.name}}</h3>
     </div>
     <div class="userDetails">
-        <ul class="findUsers">
-            <li ng-repeat="post in friendPosts">
-                <div class="post">
-
-                </div>
-                <p>{{post.postContent}}</p>
-            </li>
-        </ul>
+        <div>
+            <ul class="findUsers">
+                <li class="post" ng-repeat="post in friendPosts">
+                    <div>
+                        <div class="postAuthorData">
+                            <div class="postAuthorImage">
+                                <img class="userFriendPostImage" ng-src="{{post.author.profileImageData}}">
+                            </div>
+                            <div class="postAuthorNameData">
+                                <p>{{post.author.name}}</p>
+                                <p>{{post.date}}</p>
+                            </div>
+                        </div>
+                        <div class="postContent">
+                            <p>{{post.postContent}}</p>
+                        </div>
+                    </div>
+                    <ul class="userDetails">
+                        <li ng-repeat="comment in post.comments">
+                            <div class="postAuthorData">
+                                <div class="postAuthorImage">
+                                    <img class="userFriendPostImage" ng-src="{{comment.author.profileImageData}}">
+                                </div>
+                                <div class="postAuthorNameData">
+                                    <p>{{comment.author.name}}</p>
+                                    <p>{{comment.date}}</p>
+                                </div>
+                            </div>
+                            <div class="postContent">
+                                <p>{{comment.commentContent}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <textarea rows="4" cols="50" placeholder="Message..." ng-model="postData.postContent"></textarea>
+            <button type="submit" class="btn btn-primary" ng-click="sendMessage(postData)">Send message</button>
+        </div>
     </div>
 </div>

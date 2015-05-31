@@ -2,11 +2,42 @@
     <div>
         <h1 class="userFieldHeader">News Feed</h1>
     </div>
-    <div class="news-feed">
-        <h1>News</h1>
-        <ul>
-            <li ng-repeat="user in findUsers">{{user.name}}</li>
-        </ul>
+    <div class="userDetails">
+        <div>
+            <ul class="findUsers">
+                <li class="post" ng-repeat="post in newsPosts">
+                    <div>
+                        <div class="postAuthorData">
+                            <div class="postAuthorImage">
+                                <img class="userFriendPostImage" ng-src="{{post.author.profileImageData}}">
+                            </div>
+                            <div class="postAuthorNameData">
+                                <p>{{post.author.name}}</p>
+                                <p>{{post.date}}</p>
+                            </div>
+                        </div>
+                        <div class="postContent">
+                            <p>{{post.postContent}}</p>
+                        </div>
+                    </div>
+                    <ul class="userDetails">
+                        <li ng-repeat="comment in post.comments">
+                            <div class="postAuthorData">
+                                <div class="postAuthorImage">
+                                    <img class="userFriendPostImage" ng-src="{{comment.author.profileImageData}}">
+                                </div>
+                                <div class="postAuthorNameData">
+                                    <p>{{comment.author.name}}</p>
+                                    <p>{{comment.date}}</p>
+                                </div>
+                            </div>
+                            <div class="postContent">
+                                <p>{{comment.commentContent}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-
 </div>
