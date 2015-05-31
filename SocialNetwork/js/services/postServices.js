@@ -37,6 +37,16 @@ app.factory('postService', function($http, authService, baseServiceUrl) {
                 headers: authService.getAuthHeaders()
             };
             $http(request).success(success).error(error);
+        },
+
+        createNewComment: function(id, commentData, success, error) {
+            var request = {
+                method: 'POST',
+                url: baseServiceUrl + 'posts/' + id + '/comments',
+                headers: authService.getAuthHeaders(),
+                data: commentData
+            };
+            $http(request).success(success).error(error);
         }
     }
 });

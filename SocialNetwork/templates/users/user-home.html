@@ -18,6 +18,11 @@
                         </div>
                         <div class="postContent">
                             <p>{{post.postContent}}</p>
+                            <textarea ng-if="isShowCommentArea[post.id]" ng-model="commentData.commentContent"></textarea>
+                            <p>
+                                <button type="submit" ng-click="showCommentArea(post.id)"><img src="images/comment.bmp"></button>
+                                <button type="submit" ng-click="createNewComment(post.id, commentData)">Comment</button>
+                            </p>
                         </div>
                     </div>
                     <ul class="userDetails">
