@@ -8,6 +8,16 @@ app.factory('postService', function($http, authService, baseServiceUrl) {
                 headers: headers
             };
             $http(request).success(success).error(error);
+        },
+
+        getFriendWall: function(user, success, error) {
+            var headers = authService.getAuthHeaders();
+            var request = {
+                method: 'GET',
+                url: baseServiceUrl + 'users/' + user + '/wall?StartPostId=&PageSize=5',
+                headers: headers
+            };
+            $http(request).success(success).error(error);
         }
     }
 });

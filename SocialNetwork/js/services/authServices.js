@@ -50,8 +50,7 @@ app.factory('authService', function($http, baseServiceUrl) {
             $http(request).success(success).error(error);
         },
 
-        getUserFullData: function(success, error) {
-            var username = angular.fromJson(sessionStorage['currentUser']).userName;
+        getUserFullData: function(username, success, error) {
             var headers = this.getAuthHeaders();
             var request = {
                 method: 'GET',
@@ -101,11 +100,60 @@ app.factory('authService', function($http, baseServiceUrl) {
         },
 
         getMyFriends: function(success, error) {
-            var username = angular.fromJson(sessionStorage['currentUser']).userName;
             var headers = this.getAuthHeaders();
             var request = {
                 method: 'GET',
                 url: baseServiceUrl + 'me/friends',
+                headers: headers
+            };
+            $http(request).success(success).error(error);
+        },
+
+        searchUser: function(user, success, error) {
+            var headers = this.getAuthHeaders();
+            var request = {
+                method: 'GET',
+                url: baseServiceUrl + 'users/search?searchTerm=' + user,
+                headers: headers
+            };
+            $http(request).success(success).error(error);
+        },
+
+        sendFriendRequest: function(username, success, error) {
+            var headers = this.getAuthHeaders();
+            var request = {
+                method: 'POST',
+                url: baseServiceUrl + 'me/requests/' + username,
+                headers: headers
+            };
+            $http(request).success(success).error(error);
+        },
+
+        getFriendRequests: function(success, error) {
+            var headers = this.getAuthHeaders();
+            var request = {
+                method: 'GET',
+                url: baseServiceUrl + 'me/requests',
+                headers: headers
+            };
+            $http(request).success(success).error(error);
+        },
+
+        approveFriendRequest: function(requestId, success, error) {
+            var headers = this.getAuthHeaders();
+            var request = {
+                method: 'PUT',
+                url: baseServiceUrl + 'me/requests/' + requestId + '?status=approved',
+                headers: headers
+            };
+            $http(request).success(success).error(error);
+        },
+
+        rejectFriendRequest: function(requestId, success, error) {
+            var headers = this.getAuthHeaders();
+            var request = {
+                method: 'PUT',
+                url: baseServiceUrl + 'me/requests/' + requestId + '?status=rejected',
                 headers: headers
             };
             $http(request).success(success).error(error);

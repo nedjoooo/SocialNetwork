@@ -1,7 +1,7 @@
-app.controller('HeaderController', function($scope, authService, notifyService) {
+app.controller('HeaderController', function($scope, $location, authService, notifyService) {
     $scope.authService = authService;
-
     $scope.userData = {};
+    $scope.userQuery = '';
 
     function getCurrentUser() {
         if(authService.isLoggedIn()) {
@@ -19,4 +19,8 @@ app.controller('HeaderController', function($scope, authService, notifyService) 
     }
 
     getCurrentUser();
+
+    $scope.searchUser = function(user) {
+        $location.path('/search-result');
+    }
 });

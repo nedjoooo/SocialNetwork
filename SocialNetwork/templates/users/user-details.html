@@ -1,0 +1,19 @@
+<div class="news-feed-title" back-img="{{coverImage}}">
+    <div>
+        <h1 class="userFieldHeader">User Details</h1>
+    </div>
+    <div class="userDetails">
+        <h3>{{userData.name}}</h3>
+        <img class="userDetailsImage" ng-src="{{userData.profileImageData}}">
+        <p style="font-size: 1.2em">Gender: {{userData.gender}}</p>
+        <div ng-if="!userData.isFriend">
+            <div ng-if="userData.hasPendingRequest">
+                <p style="font-size: 1.5em">Have a friendship request to this person!</p>
+            </div>
+            <div ng-if="!userData.hasPendingRequest">
+                <button type="submit" class="btn btn-primary" ng-click="sendFriendship(userData.username)">Send Friendship</button>
+            </div>
+        </div>
+        <div id="friendshipRequest"></div>
+    </div>
+</div>

@@ -152,13 +152,9 @@ header {
     display: inline-block;
 }
 
-#edit-profile, #changePassword, #container {
+#edit-profile, #changePassword {
     margin: 0 auto;
     clear: both;
-}
-
-#edit-profile {
-    width: 800px;
 }
 
 #changePassword {
@@ -198,7 +194,6 @@ header {
 #profile-container {
     border: 1px solid black;
     padding: 10px;
-    height: 380px;
 }
 
 .editProfileButton {
@@ -273,6 +268,8 @@ input[type="file"] {
 #container {
     width: 600px;
     display: inline-block;
+    margin: 0 auto;
+    clear: both;
 }
 
 .userFriendImage {
@@ -287,4 +284,44 @@ input[type="file"] {
 #friendsSideBar {
     display: inline-block;
     width: 200px;
+}
+
+.baseViewBar {
+    width: 600px;
+    float: left;
+}
+
+.right-sidebar {
+    width: 300px;
+    display: inline-block;
+    margin: 30px 0 0 20px;
+}
+
+.findUsers {
+    list-style-type: none;
+    margin: 5px;
+}
+
+.searchFindArea {
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.userImage {
+    width: 30px;
+    height: 30px;
+}
+
+.userDetailsImage {
+    width: 150px;
+    height: 150px;
+}
+
+.userDetails {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.friendTitleImage {
+    width: 150px;
 }

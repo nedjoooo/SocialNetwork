@@ -36,6 +36,26 @@ app.config(function ($routeProvider) {
         controller: 'ChangePasswordController'
     });
 
+    $routeProvider.when('/search-results/:userQuery', {
+        templateUrl: 'templates/users/search-results.html',
+        controller: 'SearchController'
+    });
+
+    $routeProvider.when('/user-details/:username', {
+        templateUrl: 'templates/users/user-details.html',
+        controller: 'UserDetailsController'
+    });
+
+    $routeProvider.when('/friend-request', {
+        templateUrl: 'templates/users/friendship-requests.html',
+        controller: 'FriendshipRequestsController'
+    });
+
+    $routeProvider.when('/friend-profile/:username', {
+        templateUrl: 'templates/users/friend-profile.html',
+        controller: 'FriendProfileController'
+    });
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );

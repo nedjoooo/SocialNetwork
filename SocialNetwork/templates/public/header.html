@@ -17,8 +17,8 @@
     </div>
     <div id="search-bar">
         <form>
-            <input type="search" id="search">
-            <button type="submit" id="search-button" ng-click="search"><img src="images/search.bmp"></button>
+            <input type="search" id="search" ng-model="userQuery">
+            <a href="#/search-results/{{userQuery}}" id="search-button"><img src="images/search.bmp"></a>
         </form>
     </div>
 </div>

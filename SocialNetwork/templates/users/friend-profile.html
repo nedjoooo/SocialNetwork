@@ -1,0 +1,16 @@
+<div class="news-feed-title" back-img="{{coverImage}}">
+    <div>
+        <img class="friendTitleImage" ng-src="{{userData.profileImageData}}">
+        <h3>{{userData.name}}</h3>
+    </div>
+    <div class="userDetails">
+        <ul class="findUsers">
+            <li ng-repeat="post in friendPosts">
+                <div class="post">
+
+                </div>
+                <p>{{post.postContent}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

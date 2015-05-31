@@ -1,18 +1,12 @@
-<div id="container">
-    <div id="posts">
+<div class="news-feed-title" back-img="{{coverImage}}">
+    <div>
+        <h1 class="userFieldHeader">News Feed</h1>
+    </div>
+    <div class="news-feed">
+        <h1>News</h1>
         <ul>
-            <li ng-repeat="post in posts">
-                <div class="post">
-                    <div class="user">
-                        <div class="user-image">
-                            <img ng-src="{{post.author.profileImageData}}">
-                        </div>
-                        <div class="user-info">
-                            
-                        </div>
-                    </div>
-                </div>
-            </li>
+            <li ng-repeat="user in findUsers">{{user.name}}</li>
         </ul>
     </div>
+
 </div>

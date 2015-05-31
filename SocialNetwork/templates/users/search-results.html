@@ -1,0 +1,13 @@
+<div class="news-feed-title">
+    <div>
+        <h1 class="userFieldHeader">Search results</h1>
+    </div>
+    <div class="searchFindArea">
+        <ul>
+            <li class="findUsers" ng-repeat="user in searchingUsers">
+                <img class="userImage" ng-src="{{user.profileImageData}}">
+                <a href="#/user-details/{{user.username}}">{{user.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

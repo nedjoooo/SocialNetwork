@@ -14,10 +14,10 @@
 </header>
 <div id="social-network-content">
 
-    <div ng-view>
+    <div id='container' ng-view>
     </div>
 
-    <div id="friends-sidebar" ng-controller="FriendsSideBarController">
+    <div class='right-sidebar' ng-controller="FriendsSideBarController">
         <div ng-include="'templates/users/friends-sidebar.html'"></div>
     </div>
 
@@ -48,6 +48,10 @@
 <script src="js/controllers/UserHomeController.js"></script>
 <script src="js/controllers/EditUserProfileController.js"></script>
 <script src="js/controllers/ChangePasswordController.js"></script>
+<script src="js/controllers/SearchController.js"></script>
+<script src="js/controllers/UserDetailsController.js"></script>
+<script src="js/controllers/FriendshipRequestsController.js"></script>
+<script src="js/controllers/FriendProfileController.js"></script>
 
 </body>
 </html>
