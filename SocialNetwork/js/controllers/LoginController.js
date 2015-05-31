@@ -5,7 +5,7 @@ app.controller('LoginController',
             function success() {
                 notifyService.showInfo("Login successful");
                 window.location.reload();
-                $location.path("/user-home");
+                $location.path("/user/user-home");
             },
             function error(err) {
                 notifyService.showError("Login failed", err);

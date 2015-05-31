@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('ChangePasswordController',
-    function($scope, authService, notifyService) {
+    function($scope, $location, authService, notifyService) {
         $scope.getUserPreviewData = function() {
             authService.getUserPreviewData(
                 function success(data) {
@@ -19,7 +19,7 @@ app.controller('ChangePasswordController',
             authService.changePass(passData,
                 function success() {
                     notifyService.showInfo("Password changed successfully");
-                    $location.path("/user-home");
+                    $location.path("/user/user-home");
                 },
                 function error(err) {
                     notifyService.showError("Password change failed", err);

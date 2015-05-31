@@ -1,4 +1,4 @@
-app.controller('EditUserProfileController', function($scope, authService, notifyService) {
+app.controller('EditUserProfileController', function($scope, $location, authService, notifyService) {
     $scope.userData = {};
     $scope.name = '';
 
@@ -50,7 +50,7 @@ app.controller('EditUserProfileController', function($scope, authService, notify
         authService.editUser(userData,
             function success() {
                 notifyService.showInfo("User edited successfully");
-                $location.path("/user-home");
+                $location.path("/user/user-home");
             },
             function error(err) {
                 notifyService.showError("User edit failed", err);

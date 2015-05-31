@@ -6,7 +6,7 @@
         <ul>
             <li class="findUsers" ng-repeat="userRequest in usersData">
                 <img class="userImage" ng-src="{{userRequest.user.profileImageData}}">
-                <a href="#/user-details/{{userRequest.user.username}}">{{userRequest.user.name}}</a>
+                <a href="#/user/user-details/{{userRequest.user.username}}">{{userRequest.user.name}}</a>
                 <button type="submit" class="btn btn-primary" ng-click="approveFriendRequest(userRequest.id)">Approve Friendship</button>
                 <button type="submit" class="btn btn-primary" ng-click="rejectFriendRequest(userRequest.id)">Reject Friendship</button>
             </li>

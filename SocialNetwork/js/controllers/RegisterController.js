@@ -7,7 +7,7 @@ app.controller('RegisterController',
                 function(success) {
                     notifyService.showInfo("User registered successfully");
                     window.location.reload();
-                    $location.path("/user-home");
+                    $location.path("/user/user-home");
                 },
                 function error(err) {
                     notifyService.showError("User registration failed", err);

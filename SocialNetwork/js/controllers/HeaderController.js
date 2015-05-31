@@ -21,6 +21,6 @@ app.controller('HeaderController', function($scope, $location, authService, noti
     getCurrentUser();
 
     $scope.searchUser = function(user) {
-        $location.path('/search-result');
+        $location.path('/user/search-result');
     }
 });

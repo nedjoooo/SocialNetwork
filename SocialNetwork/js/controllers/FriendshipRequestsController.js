@@ -13,7 +13,6 @@ app.controller('FriendshipRequestsController', function($scope, authService, not
 
                 if(isEmpty($scope.usersData)) {
                     $scope.isFriendshipRequests = true;
-                    var a=5;
                 }
             },
             function error(err) {

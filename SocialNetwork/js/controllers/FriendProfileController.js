@@ -30,7 +30,7 @@ app.controller('FriendProfileController', function($scope, $location, $routePara
             postData,
             function success() {
                 notifyService.showInfo("Succesfully created post!");
-                $location.path("/user-home");
+                $location.path("/user/user-home");
             }
         )
     }

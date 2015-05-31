@@ -21,37 +21,37 @@ app.config(function ($routeProvider) {
         controller: 'RegisterController'
     });
 
-    $routeProvider.when('/user-home', {
+    $routeProvider.when('/user/user-home', {
         templateUrl: 'templates/users/user-home.html',
         controller: 'UserHomeController'
     });
 
-    $routeProvider.when('/edit-profile', {
+    $routeProvider.when('/user/edit-profile', {
         templateUrl: 'templates/users/edit-profile.html',
         controller: 'EditUserProfileController'
     });
 
-    $routeProvider.when('/change-password', {
+    $routeProvider.when('/user/change-password', {
         templateUrl: 'templates/users/change-password.html',
         controller: 'ChangePasswordController'
     });
 
-    $routeProvider.when('/search-results/:userQuery', {
+    $routeProvider.when('/user/search-results/:userQuery', {
         templateUrl: 'templates/users/search-results.html',
         controller: 'SearchController'
     });
 
-    $routeProvider.when('/user-details/:username', {
+    $routeProvider.when('/user/user-details/:username', {
         templateUrl: 'templates/users/user-details.html',
         controller: 'UserDetailsController'
     });
 
-    $routeProvider.when('/friend-request', {
+    $routeProvider.when('/user/friend-request', {
         templateUrl: 'templates/users/friendship-requests.html',
         controller: 'FriendshipRequestsController'
     });
 
-    $routeProvider.when('/friend-profile/:username', {
+    $routeProvider.when('/user/friend-profile/:username', {
         templateUrl: 'templates/users/friend-profile.html',
         controller: 'FriendProfileController'
     });
@@ -60,4 +60,13 @@ app.config(function ($routeProvider) {
         { redirectTo: '/' }
     );
 
+});
+
+app.run(function ($rootScope, $location, authService) {
+    $rootScope.$on('$locationChangeStart', function (event) {
+        if ($location.path().indexOf("/user/") != -1 && !authService.isLoggedIn()) {
+            // Authorization check: anonymous site visitors cannot access user routes
+            $location.path("/");
+        }
+    });
 });

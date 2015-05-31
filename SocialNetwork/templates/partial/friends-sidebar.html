@@ -1,0 +1,11 @@
+<div id="friendsSideBar" ng-if="authService.isLoggedIn()">
+    <div>
+        <div>Friends - {{friendsData.length}} total</div>
+        <div class="friendList" ng-repeat="friend in friendsData">
+            <a href="#/user/friend-profile/{{friend.username}}">
+                <img class="userFriendImage" ng-src="{{friend.profileImageData}}">
+                <p>{{friend.name}}</p>
+            </a>
+        </div>
+    </div>
+</div>

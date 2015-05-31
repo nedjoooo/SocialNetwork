@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('UserHomeController',
-    function($scope, authService, postService, notifyService) {
+    function($scope, authService, postService) {
         $scope.newsPosts = {};
 
         function getNewsPosts() {

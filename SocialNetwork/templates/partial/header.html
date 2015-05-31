@@ -1,0 +1,24 @@
+<div ng-if="!authService.isLoggedIn()">
+    <h1>Social Network</h1>
+</div>
+<div id="userFieldHeader" ng-if="authService.isLoggedIn()">
+    <span id="userPreview">
+        <span class="userImagePreview">
+            <img class="userImagePreviewTitle" ng-src="{{userData.profileImageData}}">
+        </span>
+        <span class="userNameTitle">{{userData.name}}</span>
+    </span>
+    <div id="userMenu">
+        <span class="headerLink"><a href="#/user/user-home"><img src="images/news.bmp"/></a></span>
+        <span class="headerLink"><a href="#/user/friend-request"><img src="images/friends.bmp"></a></span>
+        <span class="headerLink"><a href="#/user/edit-profile"><img src="images/settings.bmp"></a></span>
+        <span class="headerLink"><a href="#/user/change-password"><img src="images/change_password.bmp"></a></span>
+        <span class="headerLink"><a href="#/" ng-click="logout()"><img src="images/logout.bmp"></a></span>
+    </div>
+    <div id="search-bar">
+        <form>
+            <input type="search" id="search" ng-model="userQuery">
+            <a href="#/user/search-results/{{userQuery}}" id="search-button"><img src="images/search.bmp"></a>
+        </form>
+    </div>
+</div>
